@@ -10,7 +10,7 @@ class Montfort_Solutions_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort Solutions Tabs', 'montfort-elements' );
+		return esc_html__( '12. Montfort Solutions Tabs', 'montfort-elements' );
 	}
 
 	public function get_icon() {

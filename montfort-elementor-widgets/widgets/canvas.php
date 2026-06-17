@@ -10,7 +10,7 @@ class Montfort_Canvas_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort WebGL Canvas', 'montfort-elements' );
+		return esc_html__( '04. Montfort WebGL Canvas', 'montfort-elements' );
 	}
 
 	public function get_icon() {

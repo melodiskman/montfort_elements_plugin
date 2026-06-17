@@ -10,7 +10,7 @@ class Montfort_Hero_Section_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort Hero Section', 'montfort-elements' );
+		return esc_html__( '07. Montfort Hero Section', 'montfort-elements' );
 	}
 
 	public function get_icon() {

@@ -10,7 +10,7 @@ class Montfort_Footer_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort Footer', 'montfort-elements' );
+		return esc_html__( '16. Montfort Footer', 'montfort-elements' );
 	}
 
 	public function get_icon() {

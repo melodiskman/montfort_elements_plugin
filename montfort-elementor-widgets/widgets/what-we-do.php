@@ -10,7 +10,7 @@ class Montfort_What_We_Do_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort What We Do', 'montfort-elements' );
+		return esc_html__( '09. Montfort What We Do', 'montfort-elements' );
 	}
 
 	public function get_icon() {

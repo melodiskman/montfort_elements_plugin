@@ -10,7 +10,7 @@ class Montfort_Global_Connectivity_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort Global Connectivity', 'montfort-elements' );
+		return esc_html__( '10. Montfort Global Connectivity', 'montfort-elements' );
 	}
 
 	public function get_icon() {

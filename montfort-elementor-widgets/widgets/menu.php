@@ -10,7 +10,7 @@ class Montfort_Menu_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort Menu Overlay', 'montfort-elements' );
+		return esc_html__( '03. Montfort Menu Overlay', 'montfort-elements' );
 	}
 
 	public function get_icon() {

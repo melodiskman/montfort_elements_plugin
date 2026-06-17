@@ -10,7 +10,7 @@ class Montfort_Chapters_Navigation_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort Chapters Navigation', 'montfort-elements' );
+		return esc_html__( '15. Montfort Chapters Navigation', 'montfort-elements' );
 	}
 
 	public function get_icon() {

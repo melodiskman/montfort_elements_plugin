@@ -10,7 +10,7 @@ class Montfort_Header_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort Header', 'montfort-elements' );
+		return esc_html__( '02. Montfort Header', 'montfort-elements' );
 	}
 
 	public function get_icon() {

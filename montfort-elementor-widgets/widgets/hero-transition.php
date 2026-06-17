@@ -10,7 +10,7 @@ class Montfort_Hero_Transition_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort Hero Transition', 'montfort-elements' );
+		return esc_html__( '06. Montfort Hero Transition', 'montfort-elements' );
 	}
 
 	public function get_icon() {

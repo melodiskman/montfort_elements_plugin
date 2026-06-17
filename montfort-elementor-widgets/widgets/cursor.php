@@ -10,7 +10,7 @@ class Montfort_Cursor_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Montfort Cursor', 'montfort-elements' );
+		return esc_html__( '01. Montfort Cursor', 'montfort-elements' );
 	}
 
 	public function get_icon() {
