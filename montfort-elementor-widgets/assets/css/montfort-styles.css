@@ -1,0 +1,139 @@
+/* Montfort Elementor Widgets Base Styles */
+
+:root {
+    --montfort-navy: #2D628C;
+    --montfort-navy-dark: #00263f;
+    --white: #ffffff;
+}
+
+.montfort-navy-blue { color: var(--montfort-navy); }
+.montfort-navy-blue-2 { color: var(--montfort-navy-dark); }
+.white { color: var(--white); }
+.uppercase { text-transform: uppercase; }
+
+/* Grid System - 24 Columns */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    gap: 0;
+}
+
+/* Responsive Column Utilities (Basics) */
+.tb\:col-start-1 { grid-column-start: 1; }
+.tb\:col-end-25 { grid-column-end: 25; }
+.dk\:col-start-2 { grid-column-start: 2; }
+.dk\:col-end-24 { grid-column-end: 24; }
+.ml\:col-start-3 { grid-column-start: 3; }
+.ml\:col-end-23 { grid-column-end: 23; }
+.lg\:col-start-3 { grid-column-start: 3; }
+.lg\:col-end-23 { grid-column-end: 23; }
+
+/* Cursor Styles */
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Header & Menu Styles */
+header#header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.menu-links-w ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 15px;
+}
+
+.nav-link.active {
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Sustainability & Solutions */
+.section-sustainability, .section-solutions, .section-equality, .section-social {
+    position: relative;
+    padding: 100px 0;
+}
+
+/* Tabs & Content */
+.navigation-container {
+    display: flex;
+    gap: 20px;
+}
+
+.navigation-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navigation-item.active {
+    text-decoration: underline;
+}
+
+.content-item {
+    display: none;
+}
+
+.content-item.active {
+    display: block;
+}
+
+/* Social Slider */
+.images-container {
+    display: flex;
+    overflow: hidden;
+}
+
+.slide {
+    flex: 0 0 100%;
+}
+
+/* Chapters Navigation */
+.chapters-navigation {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 500;
+}
+
+.chapter-wrapper {
+    margin: 15px 0;
+}
+
+/* Typography Helpers */
+.fs-h2 { font-size: 3rem; font-weight: bold; }
+.fs-h3 { font-size: 2rem; }
+.fs-label { font-size: 0.8rem; letter-spacing: 0.1em; }
+.fs-body { font-size: 1rem; line-height: 1.6; }
+
+/* SVG Icons Default */
+svg {
+    max-width: 100%;
+    height: auto;
+}
