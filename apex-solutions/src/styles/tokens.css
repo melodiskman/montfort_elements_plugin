@@ -1,0 +1,47 @@
+:root {
+  /* Palette */
+  --navy-deep: #101d43;
+  --navy-mid: #17284e;
+  --navy-900: #0a1426;
+  --cobalt: #1855d8;
+  --electric: #087df0;
+  --cyan: #4cbee9;
+  --silver: #bac9d7;
+  --white: #f8faff;
+  --muted: #b8c5d9;
+
+  /* Surfaces */
+  --glass: rgba(30, 45, 77, 0.55);
+  --glass-strong: rgba(23, 40, 78, 0.72);
+  --glass-border: rgba(186, 201, 215, 0.18);
+  --glass-border-strong: rgba(186, 201, 215, 0.32);
+  --hairline: rgba(186, 201, 215, 0.14);
+
+  /* Text */
+  --text: var(--white);
+  --text-muted: var(--muted);
+
+  /* Radii */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* Spacing / layout */
+  --container: 1200px;
+  --container-wide: 1320px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --section-gap: clamp(64px, 9vw, 140px);
+
+  /* Effects */
+  --shadow-soft: 0 24px 60px -30px rgba(4, 12, 30, 0.9);
+  --shadow-card: 0 30px 70px -40px rgba(3, 10, 26, 0.95);
+  --blur: blur(18px);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur: 260ms;
+  --dur-slow: 340ms;
+}

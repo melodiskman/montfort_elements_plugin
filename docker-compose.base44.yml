@@ -1,47 +1,29 @@
 services:
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: montfort_root
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: montfort_wp
-    volumes:
-      - db_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pmontfort_root"]
-      interval: 5s
-      timeout: 5s
-      retries: 20
-    restart: on-failure
-
-  wordpress:
-    build:
-      context: ./.base44
-      dockerfile: Dockerfile.wordpress
+  web:
+    image: node:22
+    working_dir: /app
     ports:
-      - "3000:80"
-    environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: montfort_wp
-      WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DEBUG: 1
-      BASE44_PUBLIC_HOST_SUFFIX: ${BASE44_PUBLIC_HOST_SUFFIX:-}
+      - "3000:5173"
     volumes:
-      - wp_data:/var/www/html
-      - ./montfort-elementor-widgets:/var/www/html/wp-content/plugins/montfort-elements
-    depends_on:
-      db:
-        condition: service_healthy
+      - ./apex-solutions:/app
+      - apex_node_modules:/app/node_modules
+    environment:
+      # Vite >= 6.1 appends this to allowedHosts so the rotating sandbox preview host is accepted.
+      - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
+    command:
+      - sh
+      - -ec
+      - npm install --no-audit --no-fund && exec npm run dev -- --host 0.0.0.0 --port 5173
     healthcheck:
-      test: ["CMD-SHELL", "test -f /var/www/html/.montfort_setup_done && curl -sf -o /dev/null http://localhost/ || exit 1"]
+      test:
+        - CMD-SHELL
+        - >-
+          node -e "require('http').get('http://localhost:5173/',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"
       interval: 10s
       timeout: 5s
-      retries: 10
-      start_period: 180s
+      retries: 12
+      start_period: 150s
     restart: on-failure
 
 volumes:
-  db_data:
-  wp_data:
+  apex_node_modules:
