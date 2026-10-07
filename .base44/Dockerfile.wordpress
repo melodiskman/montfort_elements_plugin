@@ -1,0 +1,17 @@
+FROM wordpress:php8.2-apache
+
+# Install curl for healthchecks and setup script
+RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
+
+# Install WP-CLI
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+    && chmod +x wp-cli.phar \
+    && mv wp-cli.phar /usr/local/bin/wp
+
+# Copy setup scripts
+COPY setup-wp.sh /usr/local/bin/setup-wp.sh
+COPY setup-page.php /tmp/setup-page.php
+RUN chmod +x /usr/local/bin/setup-wp.sh
+
+ENTRYPOINT ["setup-wp.sh"]
+CMD ["apache2-foreground"]
